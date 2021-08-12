@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y apt-utils openssl && \
 	chmod 755 /etc/nginx/ssl && chmod 644 /etc/nginx/ssl/*
 
 COPY nginx.conf /etc/nginx/nginx.conf
-RUN chmod 666 /usr/share/nginx/html/index.html
+RUN chmod 777 /usr/share/nginx/html && chmod 666 /usr/share/nginx/html/index.html
 
 COPY run.sh /run.sh
 
