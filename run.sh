@@ -21,8 +21,4 @@ sed -i "s|\.SENTRY_DSN = '.*'|\.SENTRY_DSN = '$VIKUNJA_SENTRY_DSN'|g" /usr/share
 sed -i "s/listen 80/listen $VIKUNJA_HTTP_PORT/g" /etc/nginx/nginx.conf
 sed -i "s/listen 443/listen $VIKUNJA_HTTPS_PORT/g" /etc/nginx/nginx.conf
 
-# Set the uid and gid of the nginx run user
-usermod --non-unique --uid ${PUID} nginx
-groupmod --non-unique --gid ${PGID} nginx
-
 nginx -g "daemon off;"
